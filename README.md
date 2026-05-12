@@ -120,7 +120,7 @@ La aplicación permite:
 # 📂 Estructura del proyecto
 
 ```bash
-movieshark/
+PlataformaMultimediaModerna/
 │
 ├── src/
 ├── public/
@@ -151,7 +151,7 @@ REDISCLOUD_URL=your_redis_url
 ## 1️⃣ Clonar repositorio
 
 ```bash
-git clone https://github.com/Sedentary/movieshark.git
+git clone https://github.com/isairey/PlataformaMultimediaModerna.git
 ```
 
 ---
@@ -159,7 +159,7 @@ git clone https://github.com/Sedentary/movieshark.git
 ## 2️⃣ Entrar al proyecto
 
 ```bash
-cd movieshark
+cd PlataformaMultimediaModerna
 ```
 
 ---
@@ -285,7 +285,7 @@ git push origin feature/new-feature
 
 <div align="center">
 
-## Sedentary
+## Isai Reyes
 
 Desarrollador enfocado en plataformas multimedia modernas y optimización backend.
 
