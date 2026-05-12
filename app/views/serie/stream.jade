@@ -1,0 +1,45 @@
+extends ../layouts/layout
+
+block meta
+    include ../includes/meta/video
+
+block stylesheets
+    link(rel='stylesheet', href='//vjs.zencdn.net/5.0.0/video-js.css')
+    link(rel='stylesheet', href='/stylesheets/stream.css')
+    script(src='//vjs.zencdn.net/ie8/1.1.0/videojs-ie8.min.js')
+
+block javascripts
+    script(src='//vjs.zencdn.net/5.0.0/video.js')
+
+block content
+    .row
+        .page-header
+            h1 #{title}
+                include ../includes/rating
+                include ../includes/torrent_ratio
+            p #{synopsis}
+        .col-md-6
+            .row
+                #accordion.panel-group(role='tablist', aria-multiselectable='true')
+                    h4.text-center Seasons
+                    each episodes, season in seasons
+                        .panel.panel-default
+                            - var collapseId = "collapse-" + season
+                            - var headingId = "heading-" + season
+                            .panel-heading(id="#{headingId}" role='tab')
+                                h4.panel-title
+                                    a(role='button', data-toggle='collapse', data-parent='#accordion', href="##{collapseId}", aria-expanded='false', aria-controls="#{collapseId}")
+                                        | Season #{season}
+                            .panel-collapse.collapse(id="#{collapseId}" role='tabpanel' aria-labelledby="#{headingId}")
+                                ul.list-group
+                                    each episode, index in episodes
+                                        li.list-group-item
+                                            a(href="/serie/#{id}/season/#{season}/episode/#{index}")
+                                                h5 #{episode.title}
+                                            | #{episode.overview}
+            .row
+                h3 #{episode.title}
+                p #{episode.overview}
+
+        .col-md-6
+            include ../includes/video
